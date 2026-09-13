@@ -89,14 +89,14 @@ Credentials are securely stored in `config.json`.
 
 Alle Befehle werden innerhalb der Google Antigravity CLI (`agy`) ausgeführt:
 
-| Befehl | Argumente / Optionen | Kurzbeschreibung |
-| :--- | :--- | :--- |
-| `ai-offer-pipeline run`<br>*(Alias: `analyze`)* | Keine *(interaktive Abfrage von Kunde & Manager)* | Startet die komplette Offer Forge Pipeline: Account-Audit nach Wachstumslücken, ROI-Kalkulation, Generierung von 3 Retainer-Paketen (1.500 € – 3.500 €/Monat) und Export von 4 Dokumenten auf den Desktop. |
-| `ai-offer-pipeline audit` | Keine | Führt einen isolierten Audit-Scan auf ungenutzte Hebel im Google Ads Account durch (Creative-Gaps, Audience-Schichten, Bidding-Stagnation). |
-| `ai-offer-pipeline monitoring` | `-u, --update <clientOrId>`<br>`-s, --status <newStatus>` | Startet das Angebots-Monitoring oder aktualisiert den Status bestehender Angebote (`ACCEPTED`, `REJECTED`, `PROPOSED`, `UNDER_REVIEW`). |
-| `ai-offer-pipeline dashboard`<br>*(Alias: `help-menu`)* | Keine | Öffnet das interaktive Terminal-Dashboard zur menügeführten Steuerung sämtlicher Aktionen. |
-| `ai-offer-pipeline status` | Keine | Zeigt die aktuelle Konfiguration, Customer ID und den Export-Zielpfad an. |
-| `ai-offer-pipeline setup` | Keine | Interaktiver Einrichtungsassistent für Google Ads API Credentials (Customer ID, Developer Token, OAuth Client ID/Secret, Refresh Token). |
+| Befehl | Kurzbeschreibung |
+| :--- | :--- |
+| `ai-offer-pipeline run`<br>*(Alias: `analyze`)* | Startet die komplette Offer Forge Pipeline: Account-Audit nach Wachstumslücken, ROI-Kalkulation, Generierung von 3 Retainer-Paketen (1.500 € – 3.500 €/Monat) und Export von 4 Dokumenten auf den Desktop. |
+| `ai-offer-pipeline audit` | Führt einen isolierten Audit-Scan auf ungenutzte Hebel im Google Ads Account durch (Creative-Gaps, Audience-Schichten, Bidding-Stagnation). |
+| `ai-offer-pipeline monitoring` | Startet das Angebots-Monitoring oder aktualisiert den Status bestehender Angebote (`ACCEPTED`, `REJECTED`, `PROPOSED`, `UNDER_REVIEW`). |
+| `ai-offer-pipeline dashboard`<br>*(Alias: `help-menu`)* | Öffnet das interaktive Terminal-Dashboard zur menügeführten Steuerung sämtlicher Aktionen. |
+| `ai-offer-pipeline status` | Zeigt die aktuelle Konfiguration, Customer ID und den Export-Zielpfad an. |
+| `ai-offer-pipeline setup` | Interaktiver Einrichtungsassistent für Google Ads API Credentials (Customer ID, Developer Token, OAuth Client ID/Secret, Refresh Token). |
 
 ### Beteiligte KI-Agenten
 
