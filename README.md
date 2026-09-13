@@ -85,18 +85,38 @@ Credentials are securely stored in `config.json`.
 
 ---
 
-## 🛠 Commands & CLI Dashboard
+## 🛠 CLI & Agent Command Reference
 
-Launch the interactive CLI dashboard at any time by running:
+Alle Befehle werden innerhalb der Google Antigravity CLI (`agy`) ausgeführt:
+
+| Befehl | Argumente / Optionen | Kurzbeschreibung |
+| :--- | :--- | :--- |
+| `ai-offer-pipeline run`<br>*(Alias: `analyze`)* | Keine *(interaktive Abfrage von Kunde & Manager)* | Startet die komplette Offer Forge Pipeline: Account-Audit nach Wachstumslücken, ROI-Kalkulation, Generierung von 3 Retainer-Paketen (1.500 € – 3.500 €/Monat) und Export von 4 Dokumenten auf den Desktop. |
+| `ai-offer-pipeline audit` | Keine | Führt einen isolierten Audit-Scan auf ungenutzte Hebel im Google Ads Account durch (Creative-Gaps, Audience-Schichten, Bidding-Stagnation). |
+| `ai-offer-pipeline monitoring` | `-u, --update <clientOrId>`<br>`-s, --status <newStatus>` | Startet das Angebots-Monitoring oder aktualisiert den Status bestehender Angebote (`ACCEPTED`, `REJECTED`, `PROPOSED`, `UNDER_REVIEW`). |
+| `ai-offer-pipeline dashboard`<br>*(Alias: `help-menu`)* | Keine | Öffnet das interaktive Terminal-Dashboard zur menügeführten Steuerung sämtlicher Aktionen. |
+| `ai-offer-pipeline status` | Keine | Zeigt die aktuelle Konfiguration, Customer ID und den Export-Zielpfad an. |
+| `ai-offer-pipeline setup` | Keine | Interaktiver Einrichtungsassistent für Google Ads API Credentials (Customer ID, Developer Token, OAuth Client ID/Secret, Refresh Token). |
+
+### Beteiligte KI-Agenten
+
+*   **`AuditScannerAgent`**: Durchleuchtet Google Ads Accounts auf 5 primäre Wachstumslücken (fehlende Creative Angle Tests, Keyword-Stagnation, ungeschichtete Zielgruppen, statische Gebote, ungewichtete Conversions).
+*   **`OfferForgeAgent`**: Erstellt betriebswirtschaftliche ROI-Kalkulationen, formuliert 3 Retainer-Upgrade-Stufen (1.500 € bis 3.500 €/Monat), verfasst die Kunden-Pitch-Email und das interne Manager-Briefing.
+*   **`ExportAgent`**: Exportiert alle 4 fertigen Angebotsunterlagen (`01_Client_Offer_Proposal.md`, `02_Manager_Proposal_Email.txt`, `03_Internal_Manager_Briefing.md`, `04_Presentation_Slide_Deck.md`) in den Desktop-Ordner `Desktop/Offers/`.
+*   **`MonitoringAgent`**: Verwaltet die persistente Angebotshistorie und aktualisiert den Deal-Status über den gesamten Sales-Cycle.
+
+#### Anwendungsbeispiele:
+
 ```bash
-ai-offer-pipeline dashboard
-# or
-ai-offer-pipeline help
-```
+# 1. Vollständige Offer-Forge-Pipeline ausführen:
+ai-offer-pipeline run
 
-### Command Overview
-- `ai-offer-pipeline run`: Launches the full end-to-end Offer Forge pipeline.
-- `ai-offer-pipeline monitoring` (or `ai-offer-pipeline --monitoring`): Launches the offer monitoring dashboard.
-- `ai-offer-pipeline audit`: Executes a standalone account growth audit scan.
-- `ai-offer-pipeline setup`: Configures Google Ads API credentials.
-- `ai-offer-pipeline status`: Displays system status and configuration.
+# 2. Reinen Wachstums-Audit durchführen:
+ai-offer-pipeline audit
+
+# 3. Angebotshistorie einsehen:
+ai-offer-pipeline monitoring
+
+# 4. Angebotsstatus für einen Kunden aktualisieren:
+ai-offer-pipeline monitoring -u "Acme Corp" -s ACCEPTED
+```
